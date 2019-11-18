@@ -22,3 +22,52 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+**establish database**
+
+## Users Table
+
+|Column|Type|Options|
+|------|----|-------|
+|id|integer||
+|nickname|string|null: false|
+|password|string|null :false|
+|email|string|null: false|
+### Association
+- has_many :messeges
+- has_many :group_users
+- has_many :groups, through :group_users
+
+## Groups Table
+|Column|Type|Options|
+|------|----|-------|
+|id|integer||
+|name|string|null: false|
+### Association
+- has_many :messages
+- has_many :group_users
+- has_many :users, through :group_users
+
+
+## Group_Users Table
+|Column|Type|Options|
+|------|----|-------|
+|id|integer||
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
+### Association
+- belongs_to :group
+- belongs_to :user
+
+## Messages Table
+|Column|Type|Options|
+|------|----|-------|
+|id|integer||
+|text|text||
+|image|string||
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :group
