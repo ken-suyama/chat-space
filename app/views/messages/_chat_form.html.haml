@@ -1,0 +1,7 @@
+.form
+  .footer
+    %input{placeholder: "type a message", type: "text", class: "footer__message"}
+      %label{class: "footer__message__image"}
+        = icon('fas', 'image')
+        %input{type: "file", class: "footer__message__image__text" }
+    %input{type: "submit", value: "Send", class: "footer__send-btn"}
