@@ -1,7 +1,8 @@
 .form
-  .footer
-    %input{placeholder: "type a message", type: "text", class: "footer__message"}
-      %label{class: "footer__message__image"}
-        = icon('fas', 'image')
-        %input{type: "file", class: "footer__message__image__text" }
-    %input{type: "submit", value: "Send", class: "footer__send-btn"}
+  = form_for [@group, @message] do |f|
+    = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+    .form__mask
+      = f.label :image, class: 'form__mask__image' do
+        = icon('fas', 'image', class: 'icon')
+        = f.file_field :image, class: 'hidden'
+    = f.submit 'Send', class: 'form__send-btn'

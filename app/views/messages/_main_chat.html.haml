@@ -1,18 +1,15 @@
 .chat
   .header
     .header__left
-      %b.header__left__current-group sample
+      %b.header__left__current-group
+        = @group.name
       %ul.header__left__members-list
         Members:
-        %li.header__left__members-list__member seo
-        %li.header__left__members-list__member neko
+        %li.header__left__members-list__member
+          - @group.group_users.each do |group_user|
+            = group_user.user.name
     .header__edit-btn
-      =link_to "#" do
+      =link_to edit_group_path(@group.id) do
         Edit
   .messages
-    .message
-      .message__upper-info
-        %p.message__upper-info__talker shouya
-        %p.message__upper-info__date 2019/10/08/19:14:39
-      %p.message__text this is a first message
-  
+    = render @messages
