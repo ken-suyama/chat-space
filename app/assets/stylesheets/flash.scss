@@ -1,0 +1,12 @@
+.flashmessage {
+  .notice {
+    background-color: $sky_blue;
+    color: $white;
+    text-align: center;
+  }
+  .alert {
+    background-color: $alert_orange;
+    color: $white;
+    text-align: center;
+  }
+}
