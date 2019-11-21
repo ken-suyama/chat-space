@@ -4,12 +4,16 @@
       = current_user.name 
     %ul.header__lists
       %li.list
-        = link_to "#" do
+        = link_to new_group_path do
           = icon('fas', 'edit')
       %li.list
         = link_to edit_user_path(current_user) do
           = icon('fas', 'cog')
   .groups
-    .group
-      %b.group__name sample
-      %h3.group__message Good bye world!
+    - current_user.groups.each do |group|
+      .group
+        = link_to group_messages_path(group) do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
