@@ -1,37 +1,43 @@
 .form {
-  background-color: #ddd;
+  background-color: gray;
+  box-sizing: border-box;
+  height: 80px;
+  padding: 20px 50px 20px 40px;
   position: fixed;
   bottom: 0;
-  margin-left: 300px;
-  padding-left: 40px;
-  height: 80px;
-  width: 100%;
-  .footer {
-    display: flex;
+  right: 0;
+  width: calc(100% - 300px);
+  &__message {
+    border: none;
+    box-sizing: border-box;
     height: 50px;
-    padding-top: 15px;
-    &__message {
-      position: relative;
-      width: 70%;
-      padding-left: 10px;
-      &__image {
-        position: absolute;
-        margin-top: 10px;
-        right: 500px;
-        font-size: 1.3rem;
-        &__text{
-          display:none;
-        }
-      }
+    padding: 0 10px;
+    width: calc(100% - 150px);
+  }
+  &__mask {
+    background-color: $white;
+    float: left;
+    height: 50px;
+    padding-right: 10px;
+    position: relative;
+    &__image {
+      font-size: 20px;
+      line-height: 50px;
+      position: absolute;
+      left: 870px;
     }
-    &__send-btn {
-      font-size: 16px;
-      height: 50px;
-      margin-left: 15px;
-      padding: 0 30px;
-      background-color: #38AEF0;
-      color: $white;
-      font-weight: bold;
+    .hidden {
+      display: none;
     }
+  }
+  &__send-btn {
+    background-color: $sky_blue;
+    border: none;
+    color: $white;
+    float: right;
+    font-size: 16px;
+    height: 50px;
+    margin-left: 15px;
+    padding: 0 30px;
   }
 }
