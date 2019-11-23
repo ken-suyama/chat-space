@@ -3,7 +3,7 @@
   box-sizing: border-box;
   height: 80px;
   padding: 20px 50px 20px 40px;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   right: 0;
   width: calc(100% - 300px);
@@ -24,7 +24,7 @@
       font-size: 20px;
       line-height: 50px;
       position: absolute;
-      left: 870px;
+      left: 1080px;
     }
     .hidden {
       display: none;
