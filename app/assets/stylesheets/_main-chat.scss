@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .chat {
   width: calc(100vw - 300px);
   position: relative;
@@ -22,7 +25,7 @@
       }
     }
       &__edit-btn {
-        height: 20px;
+        height: 45px;
         margin-top: 28px;
         border: solid 1px $sky_blue;
         padding: 10px 20px;
@@ -35,7 +38,7 @@
   .messages {
     padding: 46px 40px;
     background-color: #fafafa;
-    height: 700px;
+    height: calc(100vh - 100px);
     overflow: scroll;
     .message {
       margin-bottom: 40px;
